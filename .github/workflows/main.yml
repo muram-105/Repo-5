@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout source repository
+      - name: Checkout Repo-3 repository
         uses: actions/checkout@v2
         with:
           repository: ${{ github.event.inputs.source_repository }}
