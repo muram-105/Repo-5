@@ -18,12 +18,6 @@ jobs:
           git config user.name "muram-105"
           git config user.email "muram8700@gmail.com"
 
-      - name: Clone First Repository
-        run: |
-          git clone https://github.com/muram-105/Repo3.git
-          cd Repo3
-          git checkout main
-
       - name: Sync Changes from Repo3
         run: |
           cd Repo3
@@ -34,6 +28,8 @@ jobs:
       - name: Commit and Push Changes to Second Repository
         run: |
           cd Repo-5
+          git config user.name "muram-105"
+          git config user.email "muram8700@gmail.com"
           git add -A
           git commit -m "Sync changes from first repository"
           git push origin main
