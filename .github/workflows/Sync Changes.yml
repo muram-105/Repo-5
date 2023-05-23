@@ -24,7 +24,7 @@ jobs:
           cd Repo3
           git checkout main
 
-      - name: Sync Changes from First Repository
+      - name: Sync Changes from Repo3
         run: |
           cd Repo3
           git pull
