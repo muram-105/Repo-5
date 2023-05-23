@@ -1,0 +1,21 @@
+name: Sync Changes
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  sync_changes:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Second Repository
+        uses: actions/checkout@v2
+
+      - name: Sync Changes from First Repository
+        run: |
+          git config user.name "Your Name"
+          git config user.email "your-email@example.com"
+          git pull <first-repo-url> main
+          git push origin main
