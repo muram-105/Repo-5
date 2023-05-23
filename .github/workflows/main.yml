@@ -22,7 +22,7 @@ jobs:
           git config --global muram8700@gmail.com "actions@github.com"
           git clone https://github.com/muram-105/Repo-5.git
           cd Repo-5
-          cp -R ../Repo-3/* .
+          cp -R ../Repo3/* .
           git add .
           git commit -m "Mirror changes"
           git push
