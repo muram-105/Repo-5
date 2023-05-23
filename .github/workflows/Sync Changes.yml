@@ -13,9 +13,27 @@ jobs:
       - name: Checkout Second Repository
         uses: actions/checkout@v2
 
-      - name: Sync Changes from First Repository
+      - name: Configure Git
         run: |
           git config user.name "muram-105"
           git config user.email "muram8700@gmail.com"
-          git pull Repo3 main
+
+      - name: Clone First Repository
+        run: |
+          git clone https://github.com/muram-105/Repo3.git Rep3
+          cd Repo3
+          git checkout main
+
+      - name: Sync Changes from First Repository
+        run: |
+          cd Repo3
+          git pull
+          cd ..
+          rsync -avh --delete Repo3/ Repo-5/
+
+      - name: Commit and Push Changes to Second Repository
+        run: |
+          cd Repo-5
+          git add -A
+          git commit -m "Sync changes from first repository"
           git push origin main
